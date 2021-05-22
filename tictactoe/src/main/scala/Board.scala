@@ -14,6 +14,14 @@ class Board {
     }
   }
 
+
+  def isSpaceEmpty(row: Int, col: Int): Boolean ={
+    if(spaces(row)(col) == 0)
+      return true
+    else
+      return false
+  }
+
   def updateSpace(row: Int, col: Int, newVal: Int): Unit ={
 
     if(newVal < 0 || newVal > 2) throw new IllegalArgumentException("New Value must be 0, 1, or 2")

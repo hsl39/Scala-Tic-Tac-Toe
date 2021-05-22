@@ -10,6 +10,7 @@ class Game {
   def start(): Unit ={
 
     println("Starting Game")
+    println("--------------")
     board.init()
 
     players(0) = new Player("Player 1")
@@ -22,12 +23,13 @@ class Game {
 
   }
 
-
   def runGame(): Unit ={
 
-    if(currentPlayer == 0) throw new IllegalAccessError("Use the start function to begin")
+    if(currentPlayer == 0) throw new IllegalAccessError("Use the start function to begin.")
 
-    while(!board.winCheck()){
+    //TODO write a contains method for the board, it won't work this way
+    //!board.spaces.contains(0)
+    while( !board.winCheck()){
 
       println(s"Turn ${currentTurn}")
       board.printBoard()
@@ -50,6 +52,8 @@ class Game {
 
   def getMove(): (Int, Int) = {
     var validInput = false
+
+    //TODO consider a better way to initialize this
     var rowInput = -1;
     var colInput = -1;
     while (!validInput) {
@@ -64,13 +68,18 @@ class Game {
         colInput = StdIn.readInt()
         if(colInput > 3 || colInput < 1) throw new IllegalArgumentException
 
-        validInput = true;
+        if(board.isSpaceEmpty(rowInput - 1,colInput - 1)) {
+          validInput = true
+        }
+        else {
+          println("Space is not empty.")
+        }
+
       }
       catch{
-        case e: NumberFormatException => println("Invalid Input")
-        case e: IllegalArgumentException => println("Input Out of Bounds")
+        case e: NumberFormatException => println("Invalid input.")
+        case e: IllegalArgumentException => println("Input out of bounds.")
       }
-
 
     }
 
@@ -78,3 +87,4 @@ class Game {
   }
 
 }
+
