@@ -32,9 +32,19 @@ class Board {
   }
 
   def winCheck(): Boolean ={
+    var boardState = spaces.flatten
+
+    //TODO Store Conditions in some structure
+    //TODO how can we see multi wins? IE two three in a rows in one move?
+    //TODO this may need to be iterative
+    boardState match {
+      case Array(1, 1, 1, 0, 0, 0, 0, 0, 0) => println("Wooo baby thats what i'm talking about")
+      case _ => println("No Victory Condition Met")
+    }
 
     //TODO implement win conditions
     return true;
   }
+
 
 }
