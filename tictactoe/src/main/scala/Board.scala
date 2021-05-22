@@ -43,7 +43,7 @@ class Board {
     }
 
     //TODO implement win conditions
-    return true;
+    return false;
   }
 
 
