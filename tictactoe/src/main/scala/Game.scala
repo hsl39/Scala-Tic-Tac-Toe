@@ -27,13 +27,11 @@ class Game {
 
     if(currentPlayer == 0) throw new IllegalAccessError("Use the start function to begin.")
 
-    //TODO write a contains method for the board, it won't work this way
-    //!board.spaces.contains(0)
-    while( !board.winCheck()){
+    //Game Loop
+    while( !board.winCheck()._1 && board.contains(0)){
 
       println(s"Turn ${currentTurn}")
       board.printBoard()
-      println()
 
       var move = getMove()
       //-1 to account for 0 indexing
@@ -41,6 +39,14 @@ class Game {
 
       endTurn()
 
+    }
+
+    if(board.winCheck()._2 != 0){
+      println(s"Player ${board.winCheck()._2} wins!")
+      board.printBoard()
+    }
+    else{
+      println("No more possible moves.");
     }
 
   }

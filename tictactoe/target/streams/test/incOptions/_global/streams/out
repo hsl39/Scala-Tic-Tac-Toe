@@ -1,0 +1,9 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\target\scala-2.12\test-classes.bak
+[debug] About to delete class files:
+[debug] 	BoardTest.class
+[debug] We backup class files:
+[debug] 	BoardTest.class
+[debug] Registering generated classes:
+[debug] 	BoardTest.class
+[debug] 	PlayerTest.class
+[debug] Removing the temporary directory used for backing up class files: C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\target\scala-2.12\test-classes.bak

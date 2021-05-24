@@ -1,8 +1,6 @@
 
-
 class Board {
 
-  //TODO probably a better name for this
   var spaces = Array.ofDim[Int](3, 3);
 
   def init(): Unit ={
@@ -13,7 +11,6 @@ class Board {
       }
     }
   }
-
 
   def isSpaceEmpty(row: Int, col: Int): Boolean ={
     if(spaces(row)(col) == 0)
@@ -30,6 +27,7 @@ class Board {
 
     spaces(row)(col) = newVal;
     println(s"Value $newVal placed in row $row, col $col")
+
   }
 
   //Console print to visualize board
@@ -39,20 +37,47 @@ class Board {
     }
   }
 
-  def winCheck(): Boolean ={
-    var boardState = spaces.flatten
+  //Have we won and what value?
+  def winCheck(): (Boolean, Int) ={
 
-    //TODO Store Conditions in some structure
-    //TODO how can we see multi wins? IE two three in a rows in one move?
-    //TODO this may need to be iterative
-    boardState match {
-      case Array(1, 1, 1, 0, 0, 0, 0, 0, 0) => println("Wooo baby thats what i'm talking about")
-      case _ => println("No Victory Condition Met")
+    //Horizontal
+    for(row <- 0 to 2){
+      spaces(row) match{
+        case Array(val1, val2, val3) =>
+          if(val1 != 0 && val1 == val2 && val2 == val3) {
+            return (true, val1)
+          }
+      }
     }
 
-    //TODO implement win conditions
-    return false;
+    //Vertical
+    for(col <- 0 to 2){
+        if( spaces(0)(col) != 0 && spaces(0)(col) == spaces(1)(col) && spaces(1)(col) == spaces(2)(col) ) {
+          return (true, spaces(0)(col))
+        }
+    }
+
+    //Diagonal
+    //Only Two diagonal possibilities
+    if(spaces(0)(0) != 0){
+      if( spaces(0)(0) == spaces(1)(1) && spaces(1)(1) == spaces(2)(2) )
+        return (true, spaces(0)(0))
+    }
+
+    if(spaces(0)(2) != 0){
+      if( spaces(0)(2) == spaces(1)(1) && spaces(1)(1) == spaces(2)(0) )
+        return (true, spaces(0)(0))
+    }
+
+    return (false, 0);
+
   }
 
+  def contains(value: Int): Boolean ={
+    for(row <- 0 to 2){
+      if(spaces(row).contains(value)) return true
+    }
+    return false
+  }
 
 }

@@ -1,0 +1,14 @@
+[debug] > Exec(test, None, None)
+[debug] Evaluating tasks: Test / test
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\target\scala-2.13\test-classes ...
+[error] C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\src\test\scala\BoardTest.scala:4:3: not found: value test
+[error]   test("CubeCalculator.cube") {
+[error]   ^
+[error] C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\src\test\scala\BoardTest.scala:5:12: not found: value CubeCalculator
+[error]     assert(CubeCalculator.cube(3) === 27)
+[error]            ^
+[error] two errors found
+[error] (Test / compileIncremental) Compilation failed
+[error] Total time: 2 s, completed May 24, 2021, 1:32:28 PM
+[debug] > Exec(idea-shell, None, None)

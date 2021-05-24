@@ -1,0 +1,9 @@
+[debug] > Exec(compile, None, None)
+[debug] Evaluating tasks: Compile / compile
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 4 Scala sources to C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\target\scala-2.13\classes ...
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.5. Compiling...
+[info]   Compilation completed in 6.505s.
+[info] done compiling
+[success] Total time: 9 s, completed May 24, 2021, 1:11:15 PM
+[debug] > Exec(idea-shell, None, None)

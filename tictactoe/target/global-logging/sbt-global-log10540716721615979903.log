@@ -1,0 +1,11 @@
+[debug] > Exec(test, None, None)
+[debug] Evaluating tasks: Test / test
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\target\scala-2.13\test-classes ...
+[error] C:\Users\hsl13\OneDrive\Documents\ScalaGit\Scala-Tic-Tac-Toe\tictactoe\src\test\scala\BoardTest.scala:4:18: value should is not a member of String
+[error]   "An empty Set" should "have size 0" in {
+[error]                  ^
+[error] one error found
+[error] (Test / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed May 24, 2021, 1:33:46 PM
+[debug] > Exec(idea-shell, None, None)
